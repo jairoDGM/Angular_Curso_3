@@ -1,9 +1,13 @@
-<ng-container *ngIf="!loading"> <!--muestra los elementos si el loading es false-->
-  <h2>Producto seleccionado:</h2>
-  <h4>Producto: {{product?.name}}</h4>
-  <h5 *ngIf="product?.descripcion">Descripcion: {{product?.descripcion}}</h5>
-  <h6 [ngStyle]="{'color': color}">Precio: {{product?.price | currency: 'Q'}}</h6>
-  <button type="button" class="btn btn-success" routerLink="/products">Regresar</button>
-</ng-container>
+<div class="center">
+  <div class="card" style="width: 18rem;">
+    <img src="{{product?.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product?.title}}</h5>
+      <p class="card-text">{{product?.description}}</p>
+      <h6 [ngStyle]="{'color': color}">Price: {{product?.price | currency: 'Q'}}</h6>
+      <button type="button" class="btn btn-success" routerLink="/products">Regresar</button>
+    </div>
+  </div>
+</div>
 
 <ng-container *ngIf="loading">Cargando informacion.....</ng-container> <!--muestra los elementos si el loading es true-->
